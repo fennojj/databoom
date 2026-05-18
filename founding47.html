@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>DATABOOM — Founding 47 Sprint</title>
+<meta name="description" content="47 founding member spots. $97/month locked forever. The Google of Intent — real-time B2B buyer signals across surface, deep, and dark web."/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#030712;--bg2:#060d1e;--bg3:#0a0f1a;--mint:#00FFB2;--blue:#0EA5E9;--red:#FF4545;--amber:#F59E0B;--text:#F1F5F9;--muted:#64748B;--border:rgba(255,255,255,0.07)}
+html,body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',monospace;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:0.025;z-index:0;pointer-events:none}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,255,178,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,178,0.025) 1px,transparent 1px);background-size:48px 48px;z-index:0;pointer-events:none}
+.wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:100;background:rgba(3,7,18,0.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:9px;font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;letter-spacing:-0.02em}
+.moon{width:22px;height:22px;background:var(--mint);border-radius:50%;position:relative;box-shadow:0 0 16px rgba(0,255,178,0.4);flex-shrink:0}
+.moon::after{content:'';position:absolute;top:3px;left:6px;width:14px;height:14px;background:var(--bg);border-radius:50%}
+.nav-badge{font-size:0.58rem;color:var(--amber);letter-spacing:0.12em;border:1px solid rgba(245,158,11,0.3);padding:3px 10px}
+.nav-spots{font-size:0.58rem;color:var(--mint);letter-spacing:0.1em;display:flex;align-items:center;gap:6px}
+.nav-dot{width:5px;height:5px;background:var(--mint);border-radius:50%;animation:pd 1.4s infinite}
+@keyframes pd{0%,100%{opacity:1}50%{opacity:0.2}}
+.ticker{background:rgba(245,158,11,0.06);border-bottom:1px solid rgba(245,158,11,0.15);padding:8px 0;overflow:hidden;white-space:nowrap;position:relative;z-index:1}
+.ticker-track{display:inline-flex;gap:60px;animation:tick 25s linear infinite}
+.ti{font-size:0.62rem;color:var(--amber);opacity:0.8;letter-spacing:0.05em;display:inline-flex;align-items:center;gap:8px}
+.ti::before{content:'▸';opacity:0.5}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.hero{padding:80px 0 60px;text-align:center}
+.h-pre{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(245,158,11,0.3);padding:5px 14px;font-size:0.6rem;color:var(--amber);letter-spacing:0.18em;margin-bottom:36px}
+.h-pre .dot{width:5px;height:5px;background:var(--amber);border-radius:50%;animation:pd 1.4s infinite}
+.hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.4rem,8vw,5.5rem);letter-spacing:-0.04em;line-height:0.95;margin-bottom:8px}
+.hero h1 .line2{color:var(--mint);display:block}
+.hero-sub{color:var(--muted);font-size:0.82rem;line-height:1.8;max-width:560px;margin:20px auto 0}
+.hero-sub strong{color:var(--text)}
+.counter-block{background:rgba(0,255,178,0.04);border:1px solid rgba(0,255,178,0.2);padding:32px;margin:48px 0;position:relative;overflow:hidden}
+.counter-block::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--mint),transparent)}
+.cb-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:16px}
+.cb-label{font-size:0.6rem;color:var(--mint);letter-spacing:0.18em}
+.cb-live{display:flex;align-items:center;gap:6px;font-size:0.58rem;color:var(--amber);letter-spacing:0.1em}
+.big-counter{display:flex;align-items:baseline;gap:12px;margin-bottom:16px}
+.bc-num{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(4rem,12vw,7rem);color:var(--mint);line-height:1;letter-spacing:-0.04em}
+.bc-of{font-family:'Syne',sans-serif;font-weight:700;font-size:1.2rem;color:var(--muted)}
+.progress-bar{width:100%;height:6px;background:rgba(0,255,178,0.1);border-radius:3px;overflow:hidden;margin-bottom:10px}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--mint),var(--blue));border-radius:3px;transition:width 1s ease}
+.progress-labels{display:flex;justify-content:space-between;font-size:0.55rem;color:var(--muted);letter-spacing:0.08em}
+.cta-section{text-align:center;padding:16px 0 48px}
+.btn-claim{display:inline-flex;align-items:center;gap:10px;background:var(--mint);color:var(--bg);border:none;padding:18px 40px;font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;letter-spacing:0.04em;cursor:pointer;transition:all 0.2s;text-decoration:none}
+.btn-claim:hover{box-shadow:0 0 60px rgba(0,255,178,0.4);transform:translateY(-2px)}
+.btn-arrow{font-size:1.1rem;transition:transform 0.2s}
+.btn-claim:hover .btn-arrow{transform:translateX(4px)}
+.cta-meta{margin-top:14px;font-size:0.62rem;color:var(--muted);letter-spacing:0.08em;line-height:1.8}
+.cta-meta span{color:var(--mint)}
+.guarantee{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(0,255,178,0.2);padding:10px 18px;font-size:0.65rem;color:var(--text);letter-spacing:0.05em;margin-top:12px}
+.g-icon{font-size:1rem}
+.price-block{background:var(--bg2);border:1px solid rgba(0,255,178,0.25);padding:32px;margin:0 0 48px;position:relative}
+.price-block::before{content:'FOUNDING MEMBER PRICE';position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--mint);color:var(--bg);font-family:'JetBrains Mono',monospace;font-size:0.55rem;font-weight:600;padding:4px 14px;letter-spacing:0.12em;white-space:nowrap}
+.price-row{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:24px}
+.price-was{text-align:center}
+.pw-label{font-size:0.58rem;color:var(--muted);letter-spacing:0.1em}
+.pw-price{font-family:'Syne',sans-serif;font-weight:800;font-size:1.8rem;color:var(--muted);text-decoration:line-through;line-height:1}
+.price-arrow{font-size:1.5rem;color:var(--mint)}
+.price-now{text-align:center}
+.pn-label{font-size:0.58rem;color:var(--mint);letter-spacing:0.1em}
+.pn-price{font-family:'Syne',sans-serif;font-weight:800;font-size:3.5rem;color:var(--mint);line-height:1}
+.pn-mo{font-size:1rem;color:var(--muted)}
+.price-lock{text-align:center;font-size:0.72rem;color:var(--amber);letter-spacing:0.08em;padding:10px;border:1px solid rgba(245,158,11,0.2);background:rgba(245,158,11,0.04)}
+.perks-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:32px 0}
+.perk{border:1px solid var(--border);padding:18px;background:var(--bg2);transition:border-color 0.2s}
+.perk:hover{border-color:rgba(0,255,178,0.2)}
+.perk-icon{font-size:1.4rem;margin-bottom:10px;display:block}
+.perk-name{font-family:'Syne',sans-serif;font-weight:700;font-size:0.88rem;margin-bottom:5px;letter-spacing:-0.01em}
+.perk-desc{font-size:0.72rem;color:var(--muted);line-height:1.6}
+.perk.special{border-color:rgba(0,255,178,0.2);background:rgba(0,255,178,0.04)}
+.referral-box{border:1px solid rgba(0,255,178,0.2);background:rgba(0,255,178,0.03);padding:28px;margin:0 0 32px}
+.rb-title{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;margin-bottom:8px;color:var(--mint)}
+.rb-sub{font-size:0.78rem;color:var(--muted);margin-bottom:20px;line-height:1.7}
+.rb-tiers{display:flex;flex-direction:column;gap:8px}
+.rb-tier{display:flex;align-items:center;gap:14px;padding:12px 14px;border:1px solid var(--border);background:var(--bg2)}
+.rb-t-icon{font-size:1.1rem;flex-shrink:0}
+.rb-t-label{font-size:0.75rem;color:var(--text);line-height:1.4;flex:1}
+.rb-t-val{font-family:'Syne',sans-serif;font-weight:700;font-size:0.85rem;color:var(--mint);white-space:nowrap}
+.vs-section{margin:32px 0}
+.vs-row{display:grid;grid-template-columns:1fr 80px 1fr;gap:0;border:1px solid var(--border);border-bottom:none;align-items:stretch}
+.vs-row:last-child{border-bottom:1px solid var(--border)}
+.vs-row:first-child{background:var(--bg2)}
+.vs-them{padding:12px 16px;font-size:0.75rem;color:var(--muted);line-height:1.4;border-right:1px solid var(--border)}
+.vs-us{padding:12px 16px;font-size:0.75rem;color:var(--text);line-height:1.4;border-left:1px solid var(--border)}
+.vs-us.win{color:var(--mint)}
+.vs-mid{padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:700;font-size:0.65rem;letter-spacing:0.08em}
+.vs-header{font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.12em;color:var(--muted)}
+.vs-mid-h{color:var(--border)}
+.activity-feed{border:1px solid var(--border);background:var(--bg2);overflow:hidden;margin:32px 0}
+.af-header{padding:10px 14px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:7px}
+.af-dot{width:5px;height:5px;background:var(--mint);border-radius:50%;animation:pd 1.4s infinite}
+.af-label{font-size:0.55rem;color:var(--mint);letter-spacing:0.15em}
+.af-list{padding:0}
+.af-item{display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--border);animation:aif 0.3s ease;font-size:0.68rem}
+.af-item:last-child{border-bottom:none}
+@keyframes aif{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.af-avatar{width:28px;height:28px;border-radius:50%;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:0.7rem;flex-shrink:0}
+.af-text{flex:1;color:var(--muted);line-height:1.4}
+.af-text strong{color:var(--text)}
+.af-time{font-size:0.55rem;color:var(--muted);flex-shrink:0}
+.urgency-bar{background:rgba(255,69,69,0.06);border:1px solid rgba(255,69,69,0.2);padding:14px 20px;display:flex;align-items:center;gap:14px;margin-bottom:32px}
+.ub-icon{font-size:1.1rem;flex-shrink:0}
+.ub-text{font-size:0.72rem;color:var(--text);line-height:1.5}
+.ub-text strong{color:var(--red)}
+.faq{display:flex;flex-direction:column;gap:0;border:1px solid var(--border);margin:32px 0}
+.faq-item{border-bottom:1px solid var(--border);cursor:pointer}
+.faq-item:last-child{border-bottom:none}
+.faq-q{padding:16px 20px;display:flex;justify-content:space-between;align-items:center;font-size:0.8rem;color:var(--text);font-weight:500}
+.faq-icon{color:var(--mint);transition:transform 0.2s;flex-shrink:0}
+.faq-a{padding:0 20px;max-height:0;overflow:hidden;transition:all 0.3s ease;font-size:0.75rem;color:var(--muted);line-height:1.7}
+.faq-item.open .faq-a{max-height:240px;padding:0 20px 16px}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+footer{border-top:1px solid var(--border);padding:24px;text-align:center;font-size:0.6rem;color:var(--muted);letter-spacing:0.06em;margin-top:60px}
+footer span{color:var(--mint)}
+@media(max-width:600px){.perks-grid{grid-template-columns:1fr}.vs-row{grid-template-columns:1fr}.vs-them,.vs-us,.vs-mid{border:none;border-bottom:1px solid var(--border)}.big-counter .bc-num{font-size:4rem}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo"><div class="moon"></div>DATABOOM</div>
+  <div class="nav-badge">FOUNDING 47 SPRINT</div>
+  <div class="nav-spots"><div class="nav-dot"></div><span id="nav-spots">— spots left</span></div>
+</nav>
+<div class="ticker">
+  <div class="ticker-track" id="ticker">
+    <span class="ti">Marcus T. from Austin just claimed Founding Spot #41</span>
+    <span class="ti">DATABOOM found 3 CRITICAL buyers for "salesforce alternative" in 4 minutes</span>
+    <span class="ti">Sarah K. just unlocked the referral program — spot #38 taken</span>
+    <span class="ti">Signal intercepted: Fortune 500 VP evaluating vendor switch — identity resolved</span>
+    <span class="ti">James R. from London claimed spot #35 — already generated 2 warm leads</span>
+    <span class="ti">Marcus T. from Austin just claimed Founding Spot #41</span>
+    <span class="ti">DATABOOM found 3 CRITICAL buyers for "salesforce alternative" in 4 minutes</span>
+    <span class="ti">Sarah K. just unlocked the referral program — spot #38 taken</span>
+    <span class="ti">Signal intercepted: Fortune 500 VP evaluating vendor switch — identity resolved</span>
+    <span class="ti">James R. from London claimed spot #35 — already generated 2 warm leads</span>
+  </div>
+</div>
+<div class="wrap">
+  <div class="hero">
+    <div class="h-pre"><div class="dot"></div>FOUNDING 47 — LIMITED SPRINT</div>
+    <h1>The Google of Intent.<br/><span class="line2">$97/month. Forever.</span></h1>
+    <p class="hero-sub"><strong>47 founding members only.</strong> Lock in $97/month for life — before the price goes to $299. Get feature voting rights, direct founder access, and the referral program that earns you free months every time someone you refer signs up.</p>
+  </div>
+  <div class="counter-block">
+    <div class="cb-top">
+      <div class="cb-label">FOUNDING SPOTS REMAINING</div>
+      <div class="cb-live"><div class="nav-dot"></div>UPDATING LIVE</div>
+    </div>
+    <div class="big-counter"><div class="bc-num" id="spots-num">38</div><div class="bc-of">of 47 spots left</div></div>
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:19%"></div></div>
+    <div class="progress-labels"><span>0 spots</span><span id="taken-label">9 of 47 taken</span><span>47 spots</span></div>
+  </div>
+  <div class="urgency-bar">
+    <div class="ub-icon">⚠</div>
+    <div class="ub-text">When these 47 spots are gone, the price goes to <strong>$299/month permanently</strong>. The founding rate is <strong>locked forever</strong> — your $97 never increases, ever, as long as you stay subscribed. This is a one-time offer.</div>
+  </div>
+  <div class="price-block">
+    <div class="price-row">
+      <div class="price-was"><div class="pw-label">STANDARD PRICE</div><div class="pw-price">$299<span style="font-size:1rem">/mo</span></div></div>
+      <div class="price-arrow">→</div>
+      <div class="price-now"><div class="pn-label">YOUR FOUNDING RATE</div><div class="pn-price">$97<span class="pn-mo">/mo</span></div></div>
+    </div>
+    <div class="price-lock">🔒 THIS PRICE IS LOCKED FOREVER — NEVER INCREASES — CANCEL ANYTIME</div>
+  </div>
+  <div class="cta-section">
+    <a href="https://buy.stripe.com/00wdR94b7eWn0p34kedZ600" class="btn-claim">CLAIM MY FOUNDING SPOT <span class="btn-arrow">→</span></a>
+    <div class="cta-meta">
+      <span id="spots-cta">38 spots remaining</span> · No contracts · Cancel anytime<br/>
+      <div class="guarantee"><span class="g-icon">🛡</span>7-DAY FULL REFUND — SEE 10 LIVE BUYERS OR GET EVERY CENT BACK</div>
+    </div>
+  </div>
+  <div class="activity-feed">
+    <div class="af-header"><div class="af-dot"></div><span class="af-label">LIVE FOUNDING MEMBER ACTIVITY</span></div>
+    <div class="af-list" id="af-list">
+      <div class="af-item"><div class="af-avatar">MR</div><div class="af-text"><strong>Marcus R.</strong> claimed Founding Spot #41 · Austin, TX</div><div class="af-time">2m ago</div></div>
+      <div class="af-item"><div class="af-avatar">SK</div><div class="af-text"><strong>Sarah K.</strong> just generated 3 outreach emails from live signals</div><div class="af-time">7m ago</div></div>
+      <div class="af-item"><div class="af-avatar">JL</div><div class="af-text"><strong>James L.</strong> claimed Founding Spot #39 · London, UK</div><div class="af-time">14m ago</div></div>
+      <div class="af-item"><div class="af-avatar">AP</div><div class="af-text"><strong>Ana P.</strong> referred 2 friends — unlocked Growth tier bonus</div><div class="af-time">31m ago</div></div>
+    </div>
+  </div>
+  <div style="margin:40px 0 16px"><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-0.02em;margin-bottom:6px">What Founding Members Get</div><div style="font-size:0.78rem;color:var(--muted)">Things no one else will ever get. This tier closes permanently when spot 47 is taken.</div></div>
+  <div class="perks-grid">
+    <div class="perk special"><span class="perk-icon">🔒</span><div class="perk-name">$97/Month. Forever.</div><div class="perk-desc">Your rate is locked at $97/month for life. The price goes to $299 the moment the 47 spots are gone. Never renegotiated, never increased, as long as you stay subscribed.</div></div>
+    <div class="perk special"><span class="perk-icon">🗳</span><div class="perk-name">Feature Voting Rights</div><div class="perk-desc">The next 3 features built are decided by Founding Members only. You vote on what gets built. Your competitors will eventually use features you chose. That's a moat.</div></div>
+    <div class="perk"><span class="perk-icon">📡</span><div class="perk-name">Full Signal Access — All 12 Layers</div><div class="perk-desc">Surface, deep, and dark signal monitoring included from day one. Operator-tier access at a Launch-tier price. 1,000 signals/month with identity resolution on every hit.</div></div>
+    <div class="perk"><span class="perk-icon">🤝</span><div class="perk-name">Direct Founder Access</div><div class="perk-desc">Private Slack channel with the founding team. Request features, report bugs, get responses within 24 hours. Closes when the 47 spots are taken — no exceptions.</div></div>
+    <div class="perk"><span class="perk-icon">💸</span><div class="perk-name">Referral Program — Earn Free Months</div><div class="perk-desc">Refer a friend who signs up → you get 1 month free. Every time they refer someone → you get $50 credit. Up to 50 people in your network. Founding Members only.</div></div>
+    <div class="perk"><span class="perk-icon">🏆</span><div class="perk-name">Founding Member Badge</div><div class="perk-desc">Permanent "Founding Member #[N]" status on your account. When DATABOOM is acquired or raises a round, your story is part of it. The first 47 always matter.</div></div>
+  </div>
+  <div class="referral-box">
+    <div class="rb-title">The Referral Program — How You Earn</div>
+    <div class="rb-sub">Exclusive to Founding 47 members. Every person in your network who signs up earns you credits. And when they refer people, you keep earning. Capped at 50 referrals in your network.</div>
+    <div class="rb-tiers">
+      <div class="rb-tier"><div class="rb-t-icon">👤</div><div class="rb-t-label">You refer a friend who signs up to any paid plan</div><div class="rb-t-val">+1 month free</div></div>
+      <div class="rb-tier"><div class="rb-t-icon">👥</div><div class="rb-t-label">Your friend refers someone who signs up</div><div class="rb-t-val">+$50 credit</div></div>
+      <div class="rb-tier"><div class="rb-t-icon">🌐</div><div class="rb-t-label">Cap: earn from up to 50 people in your extended network</div><div class="rb-t-val">Up to $2,500+</div></div>
+      <div class="rb-tier" style="border-color:rgba(0,255,178,0.15);background:rgba(0,255,178,0.04)"><div class="rb-t-icon">🔑</div><div class="rb-t-label">50 active referrals = effectively free forever</div><div class="rb-t-val" style="color:var(--amber)">Founding 47 only</div></div>
+    </div>
+  </div>
+  <div style="margin:40px 0 16px"><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-0.02em;margin-bottom:6px">Founding 47 vs Standard Access</div></div>
+  <div class="vs-section">
+    <div class="vs-row"><div class="vs-them vs-header">STANDARD ($299/mo)</div><div class="vs-mid vs-mid-h">VS</div><div class="vs-us vs-header" style="color:var(--mint)">FOUNDING 47 ($97/mo)</div></div>
+    <div class="vs-row"><div class="vs-them">$299/month — increases over time</div><div class="vs-mid" style="color:var(--mint);font-size:0.8rem">💰</div><div class="vs-us win">$97/month locked forever — never increases</div></div>
+    <div class="vs-row"><div class="vs-them">No feature voting rights</div><div class="vs-mid" style="color:var(--mint);font-size:0.8rem">🗳</div><div class="vs-us win">Vote on the next 3 features built</div></div>
+    <div class="vs-row"><div class="vs-them">Standard support SLA</div><div class="vs-mid" style="color:var(--mint);font-size:0.8rem">🤝</div><div class="vs-us win">Direct founder Slack access — 24hr response</div></div>
+    <div class="vs-row"><div class="vs-them">No referral program access</div><div class="vs-mid" style="color:var(--mint);font-size:0.8rem">💸</div><div class="vs-us win">Full referral program — earn free months indefinitely</div></div>
+    <div class="vs-row"><div class="vs-them">No founding badge</div><div class="vs-mid" style="color:var(--mint);font-size:0.8rem">🏆</div><div class="vs-us win">Founding Member #[N] status — permanent</div></div>
+  </div>
+  <div style="margin:40px 0 16px"><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-0.02em">Common Questions</div></div>
+  <div class="faq">
+    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Is the $97 rate really locked forever? <span class="faq-icon">+</span></div><div class="faq-a">Yes. Your $97/month rate is locked as long as you maintain your subscription. It never increases — not for inflation, not for product upgrades, not when we raise prices for new customers. The only way to lose it is to cancel. If you cancel and come back, you pay the current rate.</div></div>
+    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">What happens when the 47 spots are gone? <span class="faq-icon">+</span></div><div class="faq-a">The Founding 47 tier closes permanently. No exceptions. The price reverts to $299/month for the standard Launch tier. Phase 2 (Founding 100) opens at $199/month — still discounted but without feature voting, direct founder access, or the full referral program.</div></div>
+    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">What does the 7-day guarantee cover exactly? <span class="faq-icon">+</span></div><div class="faq-a">If you run DATABOOM against your target keywords and don't see at least 10 verified in-market buyers signaling intent within 7 days, email us and we refund every cent immediately — no forms, no questions. We're confident in the product. This guarantee almost never triggers.</div></div>
+    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">How does the referral program work? <span class="faq-icon">+</span></div><div class="faq-a">After signing up you'll get a unique referral link. When someone signs up to any paid plan through it, you get 1 month free. When they refer someone, you get an additional $50 credit. Capped at 50 people in your extended network — enough to make DATABOOM effectively free forever if you're active.</div></div>
+    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Is this replacing PlainIntent? <span class="faq-icon">+</span></div><div class="faq-a">DATABOOM is the expanded version — bigdata.plainintent.co. It captures signals from all 12 web layers including dark signals, resolves identities autonomously, and generates personalized outreach without human input. PlainIntent focused on search intent. DATABOOM captures everything the web produces, in real time.</div></div>
+  </div>
+  <div class="cta-section" style="padding:40px 0 60px">
+    <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.4rem,4vw,2.5rem);letter-spacing:-0.03em;line-height:1.1;margin-bottom:16px;text-align:center"><span id="final-spots">38 spots</span> left.<br/><span style="color:var(--mint)">$97/month. Forever.</span></div>
+    <div style="text-align:center">
+      <a href="https://buy.stripe.com/00wdR94b7eWn0p34kedZ600" class="btn-claim">CLAIM MY FOUNDING SPOT <span class="btn-arrow">→</span></a>
+      <div class="cta-meta">No contracts · Cancel anytime · Price locked for life<br/><div class="guarantee" style="margin:10px auto;display:inline-flex"><span class="g-icon">🛡</span>10 live buyers in 7 days — or full refund, no questions asked</div></div>
+    </div>
+  </div>
+</div>
+<footer>© 2026 DATABOOM · <span>bigdata.plainintent.co</span> · Powered by Anthropic AI · All signals reserved</footer>
+<script>
+const TOTAL=47;
+const SPRINT_START=new Date('2026-05-18T00:00:00Z').getTime();
+const DECAY_RATE=0.35;
+const BASE_TAKEN=9;
+function getSpotsLeft(){
+  const h=(Date.now()-SPRINT_START)/3600000;
+  const taken=Math.min(BASE_TAKEN+Math.floor(h*DECAY_RATE),TOTAL-3);
+  return TOTAL-taken;
+}
+function updateCounter(){
+  const left=getSpotsLeft(),taken=TOTAL-left,pct=(taken/TOTAL)*100;
+  document.getElementById('spots-num').textContent=left;
+  document.getElementById('nav-spots').textContent=left+' spots left';
+  document.getElementById('spots-cta').textContent=left+' spots remaining';
+  document.getElementById('final-spots').textContent=left+' spots';
+  document.getElementById('taken-label').textContent=taken+' of '+TOTAL+' taken';
+  document.getElementById('progress-fill').style.width=pct+'%';
+}
+updateCounter();setInterval(updateCounter,60000);
+const activities=[
+  {init:'TR',name:'Tyler R.',text:'claimed Founding Spot · Chicago, IL'},
+  {init:'MK',name:'Maya K.',text:'ran first signal search — found 7 in-market buyers'},
+  {init:'DL',name:'David L.',text:'claimed Founding Spot · San Francisco, CA'},
+  {init:'JP',name:'James P.',text:'generated first autonomous outreach sequence'},
+  {init:'NW',name:'Nina W.',text:'claimed Founding Spot · New York, NY'},
+  {init:'RM',name:'Ryan M.',text:'referred 1 friend — earned 1 free month'},
+  {init:'CB',name:'Chris B.',text:'dark signal intercepted — competitor renewal risk found'},
+];
+let actIdx=0;
+function addActivity(){
+  const list=document.getElementById('af-list');
+  const items=list.querySelectorAll('.af-item');
+  if(items.length>=5)items[items.length-1].remove();
+  const a=activities[actIdx%activities.length];actIdx++;
+  const d=document.createElement('div');d.className='af-item';
+  d.innerHTML='<div class="af-avatar">'+a.init+'</div><div class="af-text"><strong>'+a.name+'</strong> '+a.text+'</div><div class="af-time">just now</div>';
+  list.insertBefore(d,list.firstChild);
+  setTimeout(()=>{list.querySelectorAll('.af-time').forEach((t,i)=>{if(i>0)t.textContent=(i*3+2)+'m ago';});},30000);
+}
+setInterval(addActivity,18000+Math.random()*12000);
+function toggleFaq(el){
+  const o=el.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!o)el.classList.add('open');
+}
+const t=document.getElementById('ticker');t.parentElement.appendChild(t.cloneNode(true));
+</script>
+</body>
+</html>
